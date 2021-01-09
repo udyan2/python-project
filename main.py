@@ -1,2 +1,265 @@
-print("Hello")
-print("World!!")
+
+angry = ["It makes me furious.",
+"You definitely are Mad",
+"I am Pissed off",
+"stop!  Now I am seething with rage", 
+"I am livid right now",
+"I lost my rag when the traffic warden gave me a ticket.",
+"I blew my top when the traffic warden gave me a ticket.",
+"I lost my temper"
+"Shut your mouth",
+"Stand by what you said",
+"The ball is in my court",
+"You can't win",
+"I will show you your place",
+"Not in your dreams!",
+"You bloody bitch",
+"Fuck off",
+"Shame on you",
+"No guilt at all",
+"That's what you are",
+"That's your trait",
+"That's your character"
+"Choose your nook",
+"Don't be seen",
+"You can't be loved",
+"That's the end",
+"Enough",
+"Leave it",
+"You have no brains to understand",
+"That's what you are",
+"Stay in your limits",
+"You are in the red zone",
+"Children make the teacher hot under the collar.",
+"It makes me furious", 
+"You definitely are Mad", 
+"This Upset's me",
+" I am Pissed off", 
+"stop!  Now I am seething with rage", 
+"I am livid right now",
+"I lost my rag when the traffic warden gave me a ticket.",
+"I blew my top when the traffic warden gave me a ticket.",
+"I lost my temper",
+"Children make the teacher hot under the collar.", 
+"Don't make my blood boil.", 
+"I'm at the end of my tether. If those children don't shut up, I'll ...",
+"I have reached my limit, 14. I am about to lose my temper.", 
+"Right! That's the last straw. Be quiet now!",
+"You have pushed me over my limit .", 
+"I won't tolerate this noise anymore.",
+"He really winds me up . He's always asking for money.",
+" He drives me up the wall.", 
+"He irritates or annoys me.",
+"Don't repeat!", 
+"Stop this for heaven's sake",
+"Stop nagging beyond limits",
+"Cut it out.",
+"Leave me alone",
+"Get lost",
+"Get out of here", 
+"Don't eat my head",
+"You are rude", 
+"Don't mess",
+"You’re asking for trouble.",
+"Don’t make me say it again",
+"Im warning you for the last time.",
+"I don’t want to see your face again.",
+"I will not tolerate that",
+"Who do you think you are?",
+"Are you out of your mind?",
+"What's wrong with you?",
+"What's your problem?",
+"You never listen to me.",
+"It's all your fault",
+"You messed it up!",
+"You are impossible!",
+"That makes no point.", 
+"You are weird!",
+"Keep your nose out!",
+"None of your business.",
+"Stay out of it.",
+"Keep away",
+"I am fed up with it!",
+"Just can't stand it!",
+"I hate it",
+"I don't like it",
+"I have never been so disappointed.",
+"You are fucked up",
+"I’ve got a bone to pick with you.",
+"Don’t bite my head off.",  
+"Almost all parents blow their tops from time to time.",  
+"I am Cheesed off", 
+"You mad?", 
+"Screw it up"]
+
+lub = ["I will never stop trying. Because when you find the one, you never give up.",
+"I never want to stop making memories with you", 
+ "We love the things we love for what they are.",
+"And in her smile I see something more beautiful than the stars.",
+"I knew the second I met you that there was something about you I needed. urns out it wasn’t something about you at all. It was just you",
+"All that you are is all that I’ll ever need.",
+"I love you without knowing how, or when, or from where. I love you simply, without problems or pride: I love you in this way because I don't know any other way of loving.",
+"I love you as one loves certain dark things, secretly, between the shadow and the soul.",
+"I love how she makes me feel like anything is possible, or like life is worth it.",
+"Death cannot stop true love. All it can do is delay it for a while.",
+"I want all of you, forever, you and me, every day.",
+"What do you want? You want the moon? Just say the word and I'll throw a lasso around it and pull it down.",
+"To love and be loved is to feel the sun from both sides."]
+
+Sadness = ["Drenched with shame",   
+"There was sadness in her voice.",
+"I am doomed",
+"Nothing is possible",
+"Tears",
+"Weaping",
+"Down in mouth",
+"Down in dumps",
+"Reduce to tears",
+"Lump in throat",
+"Feeling blue",
+"have the blues",
+"Face like wet weekend",
+"Cried my eyes",
+"Cried by heart out",
+"sad state",
+"Sorry state",
+"Heart broken",
+"Heavy heart",
+"Fall to peices",
+"Fall apart",
+"Knocked sideways",
+"Feeling down",
+"Feeling low",
+"Nothing could explain the sadness she felt at that discovery.",
+"Her sadness had nothing to do with not appreciating their fortune.",
+"My heart is too full of sadness to dwell upon the happiness the summer has brought me.",
+"The sadness she felt as his truck disappeared down the road was borne of fear.",]
+"My heart melted the clouds of sadness and sin",
+"The mood in their is one of disbleif and of great sadness as well",
+
+Surprise = ["Funnily enough",
+"Heavons above",
+"is that a fact",
+"you would not believe",
+"Who would have thought"
+"Out of the blue",
+"a double take",
+"surprise",
+"caught off guard",
+"Stop dead in his tracks",
+"Drop a bombshell",
+"Jaw drop",
+"Struck dump",
+"Rooted to the spot",
+"Knocked her socks off",
+"Words fail me",
+"Raised some eyebrows",
+"Bolt from the blue",
+"Eye opener",
+"Blown away",
+"took my breath away",
+"I'll be a monkeys  uncle",
+"i can't believe it",
+"it was unbelievable",
+"of all things/people/places",
+"Now I've seen it all",
+"You don't say",
+"No Way",
+"Are You Serious?",
+"Holy Shit",
+"wtf",
+"still can't believe it"
+"that was so surprising",
+"i didn't expect that",
+"that is so shocking",
+"it almost gave me a heart attack",
+"I don't know what the hell happened",
+"i'm feeling so surprised",
+"it was so surprising",
+"it was so suprising for me",
+"it caught me by surprise",
+"I'm surprised by the reaction",
+"what a surprise!!!"]
+
+
+Fear = ["Scare the hell out of me",
+"Give me goose bump",
+"Send shivers down my spine",
+"Getting 0 out of 10",
+"Studies show that one of the greatest fears of the elderly is that they might become dependent on others.",
+"The feeling of lossing to someone.",
+"The fear of getting picked up on the class",
+"The old man felt dread instantly after seeing those theifs",
+"Mummy!!!!",
+"Good God!!",
+"That thing appeared out of nowhere and i got chills right away",
+"I'm not afraid of death; I just don't want to be there when it happens.",
+"Fear doesn't shut you down; it wakes you up",
+"Fear of a name increases fear of the thing itself.",
+"Expose yourself to your deepest fear; after that, fear has no power, and the fear of freedom shrinks and vanishes. You are free.",
+"Don't give in to your fears. If you do, you won't be able to talk to your heart",
+"No one ever told me that grief felt so like fear.",
+"cared is what you're feeling. Brave is what you're doing",
+
+Joy = ["Most of the time, I have a great time!", "It's so good to see you", "It is a good day to alive.", "What a good day", "Good day",
+"Have a pleasent day",
+"Have a good day mate",
+"Finally a pleasent fucking day",
+"Oh goddie",
+"That is very nice"
+"Pleased as punch", "on cloud nine", "on the top of the world " bhai aise kade insab ko ek line mein enter karke galat syntax le raha hai
+"In seventh heaven"
+"Over the moon"
+"Grinning from ear to ear"
+"I cherish"
+"I can't believe it"
+"I am very delighted"
+"Congratulations"
+"Back on your feet"
+"Happy as a clam"
+"Jaw Dropping"
+"Best day ever "]
+
+string = input("I am very delighted")
+
+for element in angry:
+    if element == string:
+        print("angry")
+        break
+    else:
+        print("not found")
+        break
+
+for element in lub:
+    if element == string:
+        print("lub")
+        break
+    else:
+        print("not found")
+        break
+
+for element in Sadness:
+    if element == string:
+        print("sad")
+        break
+    else:
+        print("not found")
+        break
+
+for element in Joy:
+    if element == string:
+        print("joy")
+        break
+    else:
+        print("not found")
+        break
+
+for element in Fear:
+    if element == string:
+        print("fear")
+        break
+    else:
+        print("not found")
+        break
+    if element==estring:
+        
