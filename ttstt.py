@@ -3,6 +3,13 @@ from gtts import gTTS
 import os
 import playsound
 
+#from win32com.client import Dispatch
+
+#speak = Dispatch("SAPI.SpVoice")
+
+#speak.Speak("I'm sorry I did not recognize what you said.")
+#speak.Speak("How may I help you!")
+
 r=sr.Recognizer()
 with sr.Microphone() as source:
     print('say something')
@@ -12,7 +19,7 @@ with sr.Microphone() as source:
     
   
 # Language in which you want to convert 
-language = 'en-us'
+language = 'en-uk'
   
 # Passing the text and language to the engine,  
 # here we have marked slow=False. Which tells  
