@@ -12,7 +12,7 @@ eng = pyttsx3.init()
 
 
 def shifter(voice_in):
-    emotion_list=["tolk","talk to me","let's talk","let us talk","talk with me","we should talk"]
+    emotion_list=["talk","talk to me","let's talk","let us talk","talk with me","we should talk"]
     search_list=['search something for me','search something',"let's do a search",'perform a search','search for me','do a search','search','i want to perform a search']
     webbrowser_list=['open a website', 'open google chrome for me', 'open chrome','open the browser', 'Visit a website', 'go to a website for me']
     generalq_list=['what is your name','how much do you earn','what is your favourite hobby', 'do you like listening to music','what is your favorite song']
