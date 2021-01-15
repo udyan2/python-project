@@ -8,6 +8,8 @@ import subprocess
 import wikipedia
 import smtplib
 import webbrowser as wb
+import psutil #pip
+import pyjokes
 
 def speak(text):
     tts = gTTS(text = text, lang="en-UK")
@@ -64,9 +66,31 @@ if 'send an email' in text:
     except Exception as e:
         print(e)
         speak('Unable to send email')  
-if 'search' in text:
-    speak("What to search?")
-    chromepath = "C:\ProgramFiles\Google\Chrome\Application\chrome.exe %s"
-    #location of chrome
-    search = gudio()
-    wb.get(chromepath).open_new_tab(search+'.com')
+if "cpu" in text:
+    def cpuusage():
+        usage = str(psutil.cpu_percent())
+        speak('CPU is at'+usage)
+        battery = psutil.sensors_battery()
+        speak ('battery is at')
+        speak(str(battery.percent()))
+    cpuusage()
+if "battery" in text:
+    battery = psutil.sensors_battery()
+    speak('Battery is at')
+    speak(str(battery.percent()))
+if "tell me a joke" in text:
+    def joke():
+        speak(pyjokes.get_joke())
+        print(pyjokes.get_joke())
+    joke()
+if "Sleep" in text:
+    speak("Going Offline")
+    quit()
+if 'word' in text:
+    speak("Opening Word....")
+    msworld = r"C:/Program Files/Microsoft Office/root/Office16/WINWORD.EXE"
+    os.startfile(msworld)
+if 'excel' in text:
+    speak("Opening Excel.....")
+    msexcel = r"C:/Program Files/Microsoft Office/root/Office16/EXCEL.EXE"
+    os.startfile(msexcel)
