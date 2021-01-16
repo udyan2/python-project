@@ -10,6 +10,7 @@ import smtplib
 import webbrowser as wb
 import psutil #pip
 import pyjokes
+import pyautogui
 
 def speak(text):
     tts = gTTS(text = text, lang="en-UK")
@@ -80,8 +81,9 @@ if "battery" in text:
     speak(str(battery.percent()))
 if "tell me a joke" in text:
     def joke():
-        speak(pyjokes.get_joke())
-        print(pyjokes.get_joke())
+        joke = pyjokes.get_joke()
+        speak(joke)
+        print(joke)
     joke()
 if "Sleep" in text:
     speak("Going Offline")
@@ -93,4 +95,24 @@ if 'word' in text:
 if 'excel' in text:
     speak("Opening Excel.....")
     msexcel = r"C:/Program Files/Microsoft Office/root/Office16/EXCEL.EXE"
-    os.startfile(msexcel)
+    os.startfile(msexcel)## what should i search
+if 'write a note' in text:
+    def note(text):
+        file_name = "samplenote.txt"
+        with open(file_name,"w") as f:
+            f.write(text)
+        subprocess.Popen(["notepad.exe", file_name])
+
+    speak("what should I write")
+    note_text = gudio()
+    note(note_text)
+    speak("done")
+if 'vs code' in text:
+    speak("Opening VSCode....")
+    Vscode = r"C:/Users/LENOVO/AppData/Local/Programs/Microsoft VS Code/Code.exe"
+    os.startfile(Vscode)
+if 'screenshot' in text:
+    def screenshot():
+        img = pyautogui.screenshot()
+        img.save('F:/screenshot/screenshot.png')
+    screenshot()
