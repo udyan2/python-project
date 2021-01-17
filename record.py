@@ -18,9 +18,12 @@ def recorder():
             print(voice_in)
         except sr.UnknownValueError:
             print( '' )
-            eng.say("Sorry, I did not get that")
+            eng.say("Sorry, I did not get that.")
+            eng.runAndWait()
+        except sr.WaitTimeoutError:
+            eng.say("Wait timeout error.")
             eng.runAndWait()
         except sr.RequestError:
-            eng.say("Sorry, the service is currently down")
+            eng.say("Sorry, the service is currently down.")
             eng.runAndWait()
         return voice_in
