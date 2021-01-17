@@ -3,10 +3,6 @@ import speech_recognition as sr
 from gtts import gTTS
 import pyaudio
 import playsound
-import datetime
-import subprocess
-import wikipedia
-import smtplib
 import webbrowser as wb
 import time
 
