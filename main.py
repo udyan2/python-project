@@ -1,10 +1,10 @@
 import pyttsx3
 import record
 import moduleswitcher as ms
-
+import greetings
 eng = pyttsx3.init()
 
-eng.say("Hellllo my name is X celeron! How may I help you?")
+eng.say(greetings.greet()+" Hellllo my name is X celeron! How may I help you?")
 eng.runAndWait()
 voice_in=record.recorder()
 ms.shifter(voice_in)
