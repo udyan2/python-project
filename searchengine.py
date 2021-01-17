@@ -2,8 +2,11 @@ import webbrowser as wb
 import pyttsx3
 import record
 
+eng = pyttsx3.init()
+voices = eng.getProperty('voices')
+eng.setProperty('voice', voices[0].id)
+
 def searchm():
-    eng = pyttsx3.init()
     l=['search in google','search in bing','search in yahoo']
     eng.say("Entered search module")
     eng.say("Where should I search?")
