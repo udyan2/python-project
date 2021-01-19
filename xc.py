@@ -114,5 +114,6 @@ if 'vs code' in text:
 if 'screenshot' in text:
     def screenshot():
         img = pyautogui.screenshot()
-        img.save('F:/screenshot/screenshot.png')
+        img.save('F:/screenshot.png')
+        speak("Done.........")
     screenshot()

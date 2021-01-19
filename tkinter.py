@@ -7,6 +7,54 @@ import os
 import sys
 import tkinter as tk
 
+def main(host, port):
+    """
+    Initializes and runs the GUI application.
+    Args:
+        host (str): The IP address of the server's listening socket.
+        port (int): The port number of the server's listening socket.
+    """
+    client = Client(host, port)
+    receive = client.start()
+
+    window = tk.Tk()
+    window.title('Chatroom')
+
+    frm_messages = tk.Frame(master=window)
+    scrollbar = tk.Scrollbar(master=frm_messages)
+    messages = tk.Listbox(
+        master=frm_messages,
+        yscrollcommand=scrollbar.set
+    )
+    scrollbar.pack(side=tk.RIGHT, fill=tk.Y, expand=False)
+    messages.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+    client.messages = messages
+    receive.messages = messages
+
+    frm_messages.grid(row=0, column=0, columnspan=2, sticky="nsew")
+
+    frm_entry = tk.Frame(master=window)
+    text_input = tk.Entry(master=frm_entry)
+    text_input.pack(fill=tk.BOTH, expand=True)
+    text_input.bind("<Return>", lambda x: client.send(text_input))
+    text_input.insert(0, "Your message here.")
+
+    btn_send = tk.Button(
+        master=window,
+        text='Send',
+        command=lambda: client.send(text_input)
+    )
+
+    frm_entry.grid(row=1, column=0, padx=10, sticky="ew")
+    btn_send.grid(row=1, column=1, pady=10, sticky="ew")
+
+    window.rowconfigure(0, minsize=500, weight=1)
+    window.rowconfigure(1, minsize=50, weight=0)
+    window.columnconfigure(0, minsize=500, weight=1)
+    window.columnconfigure(1, minsize=200, weight=0)
+
+    window.mainloop()
 
 class Send(threading.Thread):
     """
@@ -159,56 +207,6 @@ class Client:
         # Send message to server for broadcasting
         else:
             self.sock.sendall('{}: {}'.format(self.name, message).encode('ascii'))
-
-
-def main(host, port):
-    """
-    Initializes and runs the GUI application.
-    Args:
-        host (str): The IP address of the server's listening socket.
-        port (int): The port number of the server's listening socket.
-    """
-    client = Client(host, port)
-    receive = client.start()
-
-    window = tk.Tk()
-    window.title('Chatroom')
-
-    frm_messages = tk.Frame(master=window)
-    scrollbar = tk.Scrollbar(master=frm_messages)
-    messages = tk.Listbox(
-        master=frm_messages,
-        yscrollcommand=scrollbar.set
-    )
-    scrollbar.pack(side=tk.RIGHT, fill=tk.Y, expand=False)
-    messages.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-
-    client.messages = messages
-    receive.messages = messages
-
-    frm_messages.grid(row=0, column=0, columnspan=2, sticky="nsew")
-
-    frm_entry = tk.Frame(master=window)
-    text_input = tk.Entry(master=frm_entry)
-    text_input.pack(fill=tk.BOTH, expand=True)
-    text_input.bind("<Return>", lambda x: client.send(text_input))
-    text_input.insert(0, "Your message here.")
-
-    btn_send = tk.Button(
-        master=window,
-        text='Send',
-        command=lambda: client.send(text_input)
-    )
-
-    frm_entry.grid(row=1, column=0, padx=10, sticky="ew")
-    btn_send.grid(row=1, column=1, pady=10, sticky="ew")
-
-    window.rowconfigure(0, minsize=500, weight=1)
-    window.rowconfigure(1, minsize=50, weight=0)
-    window.columnconfigure(0, minsize=500, weight=1)
-    window.columnconfigure(1, minsize=200, weight=0)
-
-    window.mainloop()
 
 
 if __name__ == '__main__':
