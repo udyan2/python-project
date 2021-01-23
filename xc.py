@@ -117,3 +117,7 @@ if 'screenshot' in text:
         img.save('F:/screenshot.png')
         speak("Done.........")
     screenshot()
+if 'github' in text:
+    speak("Opening GITHUB....")
+    Vscode = r"C:\Users\LENOVO\AppData\Local\GitHubDesktop\GitHubDesktop.exe"
+    os.startfile(Vscode)
