@@ -11,7 +11,9 @@ import webbrowser as wb
 import psutil #pip
 import pyjokes
 import pyautogui
-
+import pywhatkit
+import pyttsx3
+eng = pyttsx3.init()
 def speak(text):
     tts = gTTS(text = text, lang="en-UK")
     filename = "voice1.mp3"
@@ -71,21 +73,20 @@ if "cpu" in text:
     def cpuusage():
         usage = str(psutil.cpu_percent())
         speak('CPU is at'+usage)
-        battery = psutil.sensors_battery()
-        speak ('battery is at')
-        speak(str(battery.percent()))
     cpuusage()
 if "battery" in text:
     battery = psutil.sensors_battery()
-    speak('Battery is at')
-    speak(str(battery.percent()))
+    eng.say('Battery is at')
+    eng.runAndWait()
+    eng.say(battery.percent)
+    eng.runAndWait()
 if "tell me a joke" in text:
     def joke():
         joke = pyjokes.get_joke()
         speak(joke)
         print(joke)
     joke()
-if "Sleep" in text:
+if "bye bye" in text:
     speak("Going Offline")
     quit()
 if 'word' in text:
@@ -117,7 +118,17 @@ if 'screenshot' in text:
         img.save('F:/screenshot.png')
         speak("Done.........")
     screenshot()
-if 'github' in text:
-    speak("Opening GITHUB....")
-    Vscode = r"C:\Users\LENOVO\AppData\Local\GitHubDesktop\GitHubDesktop.exe"
-    os.startfile(Vscode)
+########### Whatsapp message at a particular time##################
+if "play" in text:
+    speak("To which number")
+    whatnum = gudio()
+    speak("what is the message?")
+    whatmessage = gudio()
+    speak("At what Hour?")
+    whatHour = gudio()
+    speak("At what Min?")
+    whatmin = gudio()
+    whatHour1 = eval(whatHour)
+    whatmin1 = eval(whatmin)
+    pywhatkit.sendwhatmsg('+91{}',format(whatnum),whatmessage,whatHour1,whatmin1)
+    '7589423463'
