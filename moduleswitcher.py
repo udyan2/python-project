@@ -6,7 +6,6 @@ Created on Thu Jan 14 23:08:48 2021
 """
 #For switching to different modules
 import searchengine
-import xc
 import pyttsx3
 
 eng = pyttsx3.init()
@@ -18,7 +17,9 @@ def shifter(voice_in):
     webbrowser_list=['open a website', 'open google chrome for me', 'open chrome','open the browser', 'Visit a website', 'go to a website for me']
     generalq_list=['what is your name','how much do you earn','what is your favourite hobby', 'do you like listening to music','what is your favorite song']
     music_list=['play music','music','i want to listen to music','play some music','music time','play songs','songs time','song time','i want to listen to songs', 'i want some music in life', 'play me something','play music']
-    
+    wikipedia_list=["search in Wikipedia", "search something on wikipedia","wikipedia","find information for me on wikipedia", "wikipedia search","perform a wikipedia search"]
+    cpu_list=["Show the cpu battery","show system battery", "show battery","tell system battery","tell cpu battery"]
+    joke_list=["tell me a joke", "give me a joke","tell a joke","jokes","good joke"]
     if voice_in.lower() in emotion_list:
         eng.say("Switching to Emotions Module")
         eng.runAndWait()
@@ -39,7 +40,9 @@ def shifter(voice_in):
         eng.say("Switching to Music Module")
         eng.runAndWait()
         #generalq.enter
-    elif voice_in.lower()
+    elif voice_in.lower() in wikipedia_list:
+        eng.say("Switching to Wikipedia module")
+        eng.runandWait()
     else:
         eng.say("Module not found")
         eng.runAndWait()
