@@ -47,3 +47,6 @@ def open_maps():
       
     else: 
         print ("Pass the string as command line argument, Try Again")
+        eng.say(“Failed. Try Again”)
+        eng.runAndWait()
+
