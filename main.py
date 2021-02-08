@@ -4,10 +4,22 @@ import moduleswitcher as ms
 import greetings
 eng = pyttsx3.init()
 
-eng.say(greetings.greet()+" Hellllo my name is X celeron! How may I help you?")
+eng.say(greetings.greet()+" Hellllo my name is X celeron!")
 eng.runAndWait()
-voice_in=record.recorder()
-ms.shifter(voice_in)
+
+flag=1
+while flag==1:
+    eng.say("How may I help you?")
+    eng.runAndWait()
+    voice_in=record.recorder()
+    flag=ms.shifter(voice_in)
+
+
+# while(check==1):
+#     eng.say("How may I help you?")
+#     eng.runAndWait()
+#     voice_in=record.recorder()
+#     ms.shifter(voice_in)
 
 #Change voice between male and female
 #engine = pyttsx3.init()
@@ -15,4 +27,4 @@ ms.shifter(voice_in)
 #for voice in voices:
 #   print(voice)
 #   engine.setProperty('voice', voice.id)
-#Change voice end
+#Change voice end1
