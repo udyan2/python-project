@@ -1,0 +1,154 @@
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="chat.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet"
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+  body{
+   /*background-image: url(Screenshot_20210207-145457~2.png) ; */
+    background-size: contain ;
+    background-position: center;
+    background-color: black;
+    background-repeat:no-repeat;
+    overflow:scroll;
+    overflow-x: hidden;
+  }
+  .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width:100%;
+  }
+  .chatext{
+    border-radius: 20px;
+    border: 1px solid #fff;
+    padding:5px;
+
+  }
+</style>
+<!-- <script type="text/javascript">
+  var images = ["Screenshot_20210207-145457~22.png", "Screenshot_20210207-145457~2.png"];
+  $(function () {
+      var i = 0;
+      $("body").css("background-image", "url(" + images[i] + ")");
+      setInterval(function () {
+          i++;
+          if (i == images.length) {
+              i = 0;
+          }
+          $("body").fadeOut( function () {
+              $(this).css("background-image", "url(" + images[i] + ")");
+              $(this).css("opacity", "1");
+              $(this).fadeIn();
+          });
+      }, 3000);
+  });
+</script>  -->
+<script>
+  $(function () {
+    var body = $('body');
+    var backgrounds = [
+      'url(simback.jpg)', 
+      'url(yesback.jpg'];
+    var current = 0;
+
+    function nextBackground() {
+        body.css(
+            'background',
+        backgrounds[current = ++current % backgrounds.length]);
+        body.css( 'background-size', 'cover');
+        body.css( 'background-position', 'center');
+        body.css( 'background-repeat', 'no-repeat');
+        setTimeout(nextBackground, 1000);
+    }
+    setTimeout(nextBackground, 1000);
+    body.css('background', backgrounds[0]);
+});
+</script>
+ 
+<body style="background-color: #000;">
+<div class="container">
+<div class="messaging">
+      <div>
+    
+        <div class="mesgs">
+          <div class="msg_history">
+            <div class="incoming_msg">
+              <div class="incoming_msg_img"> <img src="Screenshot_20210207-145457~2.png" alt="sunil"> </div>
+              <div class="received_msg">
+                <div class="received_withd_msg">
+                  <p>Test which is a new approach to have all
+                    solutions </p>
+                  <span class="time_date"> 11:01 AM    |    June 9</span></div>
+              </div>
+            </div>
+            <div class="outgoing_msg">
+              <div class="sent_msg">
+                <p>Test which is a new approach to have all
+                  solutions</p>
+                <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+            </div>
+            <div class="incoming_msg">
+              <div class="incoming_msg_img"> <img src="Screenshot_20210207-145457~2.png" alt="sunil"> </div>
+              <div class="received_msg">
+                <div class="received_withd_msg">
+                  <p>Test, which is a new approach to have</p>
+                  <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+              </div>
+            </div>
+            <div class="outgoing_msg">
+              <div class="sent_msg">
+                <p>Apollo University, Delhi, India Test</p>
+                <span class="time_date"> 11:01 AM    |    Today</span> </div>
+            </div>
+            <div class="incoming_msg">
+              <div class="incoming_msg_img"> <img src="Screenshot_20210207-145457~2.png" alt="sunil"> </div>
+              <div class="received_msg">
+                <div class="received_withd_msg">
+                  <p>We work directly with our designers and suppliers,
+                    and sell direct to you, which means quality, exclusive
+                    products, at a price anyone can afford.</p>
+                  <span class="time_date"> 11:01 AM    |    Today</span></div>
+              </div>
+            </div>
+
+            <div class="outgoing_msg" id="incmsg" style="display: none; margin-bottom: 72px;">
+              <div class="sent_msg">
+                <p><input type="text" id="to" value="" style="width: 100%;background-color: transparent;border: none;color: #fff;;"></p>
+                <span class="time_date"> <input type="text" id="dnt" value="" style="width: 100%;background-color: transparent;border: none;color: #fff;;"></span> </div>
+            </div>
+
+          </div>
+          <div>
+            <div class="input_msg_write footer" style="padding:4px">
+              <input type="text" class="chatext write_msg" placeholder="Type a message" id="from" />
+              <button class="msg_send_btn" type="button" id="sender" style="margin-right:10px"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        $(document).ready(function(){
+          $("#sender").click(function(){
+            var $from = $("#from").val();
+           $("#to").val($from);
+           $("#incmsg").show(100); 
+           var $dat = new Date(); 
+           $("#dnt").val($dat); 
+          });
+         
+        });
+        </script>
+    </div></div>
+    </body>
+    </html>
