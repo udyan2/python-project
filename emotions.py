@@ -1,253 +1,101 @@
 import record
 import pyttsx3
+import tkinter as tk
+from tkinter import filedialog
+import pandas as pd
 
 eng=pyttsx3.init()
 
-angry = ["it makes me furious.",
-"you definitely are mad",
-"i am pissed off",
-"stop!  now i am seething with rage", 
-"i am livid right now",
-"i lost my rag when the traffic warden gave me a ticket",
-"i blew my top when the traffic warden gave me a ticket",
-"i lost my temper"
-"shut your mouth",
-"stand by what you said",
-"the ball is in my court",
-"you can't win",
-"i will show you your place",
-"not in your dreams",
-"you bloody bitch",
-"fuck off",
-"shame on you",
-"no guilt at all",
-"that's what you are",
-"that's your trait",
-"that's your character"
-"choose your nook",
-"don't be seen",
-"you can't be loved",
-"that's the end",
-"enough",
-"leave it",
-"you have no brains to understand",
-"that's what you are",
-"stay in your limits",
-"you are in the red zone",
-"children make the teacher hot under the collar.",
-"it makes me furious", 
-"you definitely are mad", 
-"this upsets me",
-" i am pissed off", 
-"stop!  now i am seething with rage", 
-"i am livid right now",
-"i lost my rag when the traffic warden gave me a ticket",
-"i blew my top when the traffic warden gave me a ticket",
-"i lost my temper",
-"children make the teacher hot under the collar", 
-"don't make my blood boil", 
-"i am at the end of my tether if those children don't shut up i will",
-"i have reached my limit i am about to lose my temper", 
-"right! that's the last straw. be quiet now",
-"you have pushed me over my limit", 
-"i won't tolerate this noise anymore",
-"he really winds me up he is always asking for money",
-" he drives me up the wall", 
-"he irritates or annoys me",
-"don't repeat", 
-"stop this for heaven's sake",
-"stop nagging beyond limits",
-"cut it out",
-"leave me alone",
-"get lost",
-"get out of here", 
-"don't eat my head",
-"you are rude", 
-"don't mess",
-"you’re asking for trouble",
-"don’t make me say it again",
-"im warning you for the last time",
-"i don’t want to see your face again",
-"i will not tolerate that",
-"who do you think you are",
-"are you out of your mind",
-"what's wrong with you",
-"what's your problem",
-"you never listen to me",
-"it's all your fault",
-"you messed it up",
-"you are impossible",
-"that makes no point", 
-"you are weird",
-"keep your nose out",
-"none of your business",
-"stay out of it",
-"keep away",
-"i am fed up with it",
-"just can't stand it",
-"i hate it",
-"i don't like it",
-"i have never been so disappointed",
-"you are fucked up",
-"i’ve got a bone to pick with you",
-"don’t bite my head off",  
-"almost all parents blow their tops from time to time",  
-"i am cheesed off", 
-"you mad", 
-"screw it up"]
 
-love = ["i will never stop trying. because when you find the one, you never give up",
-"i never want to stop making memories with you", 
- "we love the things we love for what they are",
-"and in her smile i see something more beautiful than the stars",
-"i knew the second i met you that there was something about you i needed turns out it wasn’t something about you at all it was just you",
-"all that you are is all that i’ll ever need.",
-"i love you without knowing how, or when, or from where. i love you simply, without problems or pride: i love you in this way because i don't know any other way of loving",
-"i love you as one loves certain dark things, secretly, between the shadow and the soul",
-"i love how she makes me feel like anything is possible, or like life is worth it",
-"death cannot stop true love. all it can do is delay it for a while",
-"i want all of you, forever, you and me, every day",
-"what do you want? you want the moon? just say the word and i'll throw a lasso around it and pull it down",
-"to love and be loved is to feel the sun from both sides"]
+def trainmodel():
+    root= tk.Tk()
+    traincanvas = tk.Canvas(root, width = 300, height = 300, bg = 'white')
+    traincanvas.pack()
 
-sad = ["drenched with shame",   
-"there was sadness in her voice.",
-"i am doomed",
-"nothing is possible",
-"tears",
-"weaping",
-"down in mouth",
-"down in dumps",
-"reduce to tears",
-"lump in throat",
-"feeling blue",
-"have the blues",
-"face like wet weekend",
-"cried my eyes",
-"cried by heart out",
-"sad state",
-"sorry state",
-"heart broken",
-"heavy heart",
-"fall to peices",
-"fall apart",
-"knocked sideways",
-"feeling down",
-"feeling low",
-"nothing could explain the sadness she felt at that discovery.",
-"her sadness had nothing to do with not appreciating their fortune.",
-"my heart is too full of sadness to dwell upon the happiness the summer has brought me.",
-"the sadness she felt as his truck disappeared down the road was borne of fear.",
-"my heart melted the clouds of sadness and sin",
-"the mood in their is one of disbleif and of great sadness as well"]
+    def getExcel ():
+        global rf, angry, sad, love, surprise, joy, fear
+        
+        import_file_path = filedialog.askopenfilename()
+        rf = pd.read_excel (import_file_path)
+        
+        angry = rf['Angry'].tolist()
+        sad = rf['Sad'].tolist()
+        love = rf['Love'].tolist()
+        surprise = rf['Fear'].tolist()
+        joy = rf['Joy'].tolist()
+        fear = rf['Fear'].tolist()
+       
+    browseb_Excel = tk.Button(text='Train Model', command=getExcel, bg='green', fg='white', font=('arial', 12, 'bold'))
+    traincanvas.create_window(150, 150, window=browseb_Excel)
+    root.mainloop()
+    return
 
-surprise = ["funnily enough",
-"heavens above",
-"is that a fact",
-"you would not believe",
-"who would have thought"
-"out of the blue",
-"a double take",
-"surprise",
-"caught off guard",
-"stop dead in his tracks",
-"drop a bombshell",
-"jaw drop",
-"struck dump",
-"rooted to the spot",
-"knocked her socks off",
-"words fail me",
-"raised some eyebrows",
-"bolt from the blue",
-"eye opener",
-"blown away",
-"took my breath away",
-"i'll be a monkeys  uncle",
-"i can't believe it",
-"it was unbelievable",
-"of all things",
-"now i've seen it all",
-"you don't say",
-"no way",
-"are you serious?",
-"holy shit",
-"wtf",
-"still can't believe it"
-"that was so surprising",
-"i didn't expect that",
-"that is so shocking",
-"it almost gave me a heart attack",
-"i don't know what the hell happened",
-"i'm feeling so surprised",
-"it was so surprising",
-"it was so suprising for me",
-"it caught me by surprise",
-"i'm surprised by the reaction",
-"what a surprise!!!"]
+score=[0,0,0,0,0]
 
-
-fear = ["scare the hell out of me",
-"give me goose bump",
-"send shivers down my spine",
-"getting 0 out of 10",
-"studies show that one of the greatest fears of the elderly is that they might become dependent on others.",
-"the feeling of lossing to someone.",
-"the fear of getting picked up on the class",
-"the old man felt dread instantly after seeing those thiefs",
-"mummy",
-"good god",
-"that thing appeared out of nowhere and i got chills right away",
-"i'm not afraid of death; i just don't want to be there when it happens.",
-"fear doesn't shut you down; it wakes you up",
-"fear of a name increases fear of the thing itself",
-"expose yourself to your deepest fear after that fear has no power and the fear of freedom shrinks and vanishes you are free",
-"don't give in to your fears if you do you won't be able to talk to your heart",
-"no one ever told me that grief felt so like fear.",
-"cared is what you're feeling. brave is what you're doing"]
-
-joy = ["most of the time, i have a great time!", "it's so good to see you", "it is a good day to alive.", "what a good day", "good day",
-"have a pleasent day",
-"have a good day mate",
-"finally a pleasent fucking day",
-"oh goddie",
-"that is very nice",
-"pleased as punch",
-"on cloud nine",
-"on the top of the world",
-"in seventh heaven",
-"over the moon",
-"grinning from ear to ear",
-"i cherish",
-"i can't believe it",
-"i am very delighted",
-"congratulations",
-"back on your feet",
-"happy as a clam",
-"jaw dropping",
-"best day ever"]
-
-
-eng.say("i am here to talk to you!")
-eng.runAndWait()
-voice_in = record.recorder()
-
-if voice_in.lower() in angry:
-    eng.say("You are angry. You should calm down.")
+flag=1
+while(flag==1):
+    eng.say("i am here to talk to you!")
     eng.runAndWait()
-elif voice_in.lower() in love:
-    eng.say("it's great that you are feeling loved")
+    
+    file_path='emotions.xlsx'
+    rf = pd.read_excel (file_path)
+
+    angry = rf['Angry'].str.lower().tolist()
+    sad = rf['Sad'].str.lower().tolist()
+    love = rf['Love'].str.lower().tolist()
+    joy = rf['Joy'].str.lower().tolist()
+    fear = rf['Fear'].str.lower().tolist()
+    
+        
+        
+    voice_in = record.recorder()
+    words_in = voice_in.lower().split()
+    print(words_in)
+    
+    for el in words_in:
+        check_angry = rf['Angry'].str.contains(el).any()
+        check_sad = rf['Sad'].str.contains(el).any()
+        check_love = rf['Love'].str.contains(el).any()
+        # check_surprise = rf['Surprise'].str.contains(voice_in.lower()).any()
+        check_joy = rf['Joy'].str.contains(el).any()
+        check_fear = rf['Fear'].str.contains(el).any()
+        
+        if voice_in == 'train model':
+            eng.say("I love training. Please provide me with the excel file.")
+            eng.runAndWait()
+            trainmodel()
+        elif check_angry:
+            score[0]+=1
+            eng.say("You are angry. You should calm down.")
+            eng.runAndWait()
+        elif check_sad:
+            score[1]+=1
+            eng.say("you are sad. i wish i could make you happy")
+            eng.runAndWait()
+        elif check_love:
+            score[2]+=1
+            eng.say("it's great that you are feeling loved")
+            eng.runAndWait()
+        #elif check_surprise:
+        #    eng.say("you look do surprised.")
+        #    eng.runAndWait()
+        elif check_joy:
+            score[3]+=1
+            eng.say("i'm glad that you're happy.")
+            eng.runAndWait()
+        elif check_fear:
+            score[4]+=1
+            eng.say("Your words reflect fear. Don't worry, you have me by your side.")
+            eng.runAndWait()
+        elif voice_in.lower()=='exit':
+            break
+        else:
+            print("not found")
+    eng.say("Would you like me to show your emotions score?")
     eng.runAndWait()
-elif voice_in.lower() in sad:
-    eng.say("you are sad. i wish i could make you happy")
-    eng.runAndWait()
-elif voice_in in surprise:
-    eng.say("you look do surprised.")
-    eng.runAndWait()
-elif voice_in.lower() in fear:
-    eng.say("your words reflect fear")
-    eng.runAndWait()
-elif voice_in.lower() in joy:
-    eng.say("i'm glad that you're happy.")
-    eng.runAndWait()
-else:
-    print("not found")
+    voice_in=record.recorder()
+    if voice_in.lower()=='yes':
+        print(score)
+        break
+    else:
+        pass
