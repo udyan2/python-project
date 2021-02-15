@@ -23,6 +23,19 @@ def shifter(voice_in):
     cpu_list=['show cpu usage','cpu usage','cpu percent','show cpu percent','tell cpu utilization','tell cpu usage']
     joke_list=["tell me a joke", "give me a joke","tell a joke","jokes","good joke"]
     exit_list=["exit","quit"]
+    maps-["find this loction for me","where is this place","give me direction to the place","where is this place","find this place for me","does this place exist"]
+    note=["can you make notes of these","write some notes for me","make some notes","can you sum it up","can you make summary of this","summarise these points","summarise it"]
+    reminder=["can you remind me of something","remind me","put up a reminder","reminder","remind me this","keep a reminder"]
+    notepad=["write a note for me","note this down","keep this noted","please note this down","can you note this down","note this down","note"]
+    calender=["what is todays date"]
+    sudoku=["let us play something","can we play sudoku","I am bored can we play something","let us do something fun"]
+    msword=["open a word file","create a new word file","new word document","open word"]
+    msexcel=["open a excel file","create a new excel file","new excel document","open excel"]
+    vscode=["open a vscode file","create a new vscode file","open vscode","open a vs code file","create a new vs code file","open vs code"]
+    news=["what are the top news","catch me up with the news","news updates","news updates please","news","tell me about the news","what are the head lines today","whats happening today in the world"]
+    system=["shutdown the system","shutdown","close my system","we can wrap it up for the day","restart the system","restart","restart my system","logout of the system","logout","logout my system"]
+    screenshot=["take a screenshot for me","screenshot this","take screenshot","screenshot","let us screenshot that"]
+    timer=["open timer","open up the timer","open the timer"]
     if voice_in.lower() in emotion_list:
         eng.say("Switching to Emotions Module")
         eng.runAndWait()
