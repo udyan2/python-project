@@ -1,7 +1,6 @@
 from urllib.request import urlopen
 import json
 import pyttsx3
-import record
 
 eng=pyttsx3.init()
 
