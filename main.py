@@ -4,7 +4,7 @@ import moduleswitcher as ms
 import greetings
 eng = pyttsx3.init()
 
-eng.say(greetings.greet()+" Hellllo my name is X celeron!")
+eng.say(greetings.greet()+" My name is X celeron!")
 eng.runAndWait()
 
 flag=1
