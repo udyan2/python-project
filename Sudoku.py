@@ -9,8 +9,6 @@ screen = pygame.display.set_mode((500, 600))
 
 # Title and Icon
 pygame.display.set_caption("SUDOKU SOLVER USING BACKTRACKING")
-img = pygame.image.load('add.gif')
-pygame.display.set_icon(img)
 
 x = 0
 y = 0
@@ -18,7 +16,7 @@ dif = 500 / 9
 val = 0
 # Default Sudoku Board.
 grid = [
-    [6, 8, 0, 4, 0, 0, 1, 2, 0],
+    [7, 8, 0, 4, 0, 0, 1, 2, 0],
     [6, 0, 0, 0, 7, 5, 0, 0, 9],
     [0, 0, 0, 6, 0, 1, 0, 7, 8],
     [0, 0, 7, 0, 4, 0, 2, 6, 0],
