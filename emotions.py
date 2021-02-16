@@ -34,7 +34,7 @@ def enter():
     
     flag=1
     while(flag==1):
-        eng.say("i am here to talk to you!")
+        eng.say("i am here to talk to you! So, how are you feeling")
         eng.runAndWait()
         
         file_path='emotions.xlsx'
@@ -88,7 +88,10 @@ def enter():
                 eng.say("Your words reflect fear. Don't worry, you have me by your side.")
                 eng.runAndWait()
             elif voice_in.lower()=='exit':
-                break
+                eng.say("Exiting Emotions Module")
+                eng.runAndWait()
+                check=1
+                return check                
             else:
                 print("not found")
         eng.say("Would you like me to show your emotions score?")
