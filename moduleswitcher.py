@@ -11,6 +11,7 @@ import searchengine
 import emotions
 import battery
 import joke
+import maps
 eng = pyttsx3.init()
 
 
@@ -25,7 +26,7 @@ def shifter(voice_in):
     cpu_list=['show cpu usage','cpu usage','cpu percent','show cpu percent','tell cpu utilization','tell cpu usage']
     jokes_list=["tell me a joke", "give me a joke","tell a joke","jokes","good joke"]
     exit_list=["exit","quit","bye","shutdown","go to sleep"]
-    maps_list=["find this loction for me","where is this place","give me direction to the place","where is this place","find this place for me","does this place exist"]
+    maps_list=["find this loction for me","where is this place","give me direction to the place","where is this place","find this place for me","does this place exist","check a location for me","open maps for me","open maps","show me a location"]
     note_list=["can you make notes of these","write some notes for me","make some notes","can you sum it up","can you make summary of this","summarise these points","summarise it"]
     reminder_list=["can you remind me of something","remind me","put up a reminder","reminder","remind me this","keep a reminder"]
     notepad_list=["write a note for me","note this down","keep this noted","please note this down","can you note this down","note this down","note"]
@@ -39,13 +40,13 @@ def shifter(voice_in):
     screenshot_list=["take a screenshot for me","screenshot this","take screenshot","screenshot","let us screenshot that"]
     timer_list=["open timer","open up the timer","open the timer"]
     if voice_in.lower() in emotion_list:
-        eng.say("Switching to Emotions Module")
-        eng.runAndWait()
+        # eng.say("Switching to Emotions Module")
+        # eng.runAndWait()
         check=emotions.enter()
         return check
     elif voice_in.lower() in search_list:
-        eng.say("Switching to Search Module")
-        eng.runAndWait()
+        # eng.say("Switching to Search Module")
+        # eng.runAndWait()
         check=searchengine.searchm()
         return check
     elif voice_in.lower() in webbrowser_list:
@@ -64,24 +65,34 @@ def shifter(voice_in):
         eng.say("Switching to Wikipedia module")
         eng.runAndWait()
     elif voice_in.lower() in cpu_list:
-        eng.say("Switching to cpu module")
-        eng.runAndWait()
+        # eng.say("Switching to cpu module")
+        # eng.runAndWait()
         check=cpu.cpuusage()
         return check
     elif voice_in.lower() in battery_list:
-        eng.say("Switching to battery module")
-        eng.runAndWait()
+        # eng.say("Switching to battery module")
+        # eng.runAndWait()
         check=battery.battery_()
         return check
     elif voice_in.lower() in jokes_list:
-        eng.say("Switching to Jokes Module")
-        eng.runAndWait()
+        # eng.say("Switching to Jokes Module")
+        # eng.runAndWait()
         check=joke.jokes()
         return check
+    elif voice_in.lower() in maps_list:
+        # eng.say("Switching to Jokes Module")
+        # eng.runAndWait()
+        check=maps.enter()
+        return check
+    # elif voice_in.lower() in jokes_list:
+    #     # eng.say("Switching to Jokes Module")
+    #     # eng.runAndWait()
+    #     check=joke.jokes()
+    #     return check
     elif voice_in.lower() in exit_list:
         eng.say("Bye, have a great day!")
         eng.runAndWait()
     else:
-        eng.say("Module not found")
+        eng.say("This functionality will be available soon!")
         eng.runAndWait()
         return 1
