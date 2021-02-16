@@ -4,7 +4,6 @@ import pyttsx3
 import record
 
 eng=pyttsx3.init()
-text = record.recorder()
 
 def readnews():
     try:
@@ -12,7 +11,7 @@ def readnews():
         data = json.load(jsonObj)
         i = 1
                 
-        eng.say('here are some top news from the times of india')
+        eng.say('here are the top 5 headlines for today')
         eng.runAndWait()
         print('''=============== TOP HEADLINES ============'''+ '\n')
                 
