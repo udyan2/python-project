@@ -70,7 +70,7 @@ def shifter(voice_in):
         check=cpu.cpuusage()
         return check
     elif voice_in.lower() in battery_list:
-        # eng.say("Switching to battery module")
+        # eng.say("Switchingching to battery module")
         # eng.runAndWait()
         check=battery.battery_()
         return check
@@ -84,11 +84,11 @@ def shifter(voice_in):
         # eng.runAndWait()
         check=maps.enter()
         return check
-    # elif voice_in.lower() in jokes_list:
-    #     # eng.say("Switching to Jokes Module")
-    #     # eng.runAndWait()
-    #     check=joke.jokes()
-    #     return check
+    elif voice_in.lower() in note_list:
+        # eng.say("Switching to Jokes Module")
+        # eng.runAndWait()
+        check=note.enter()
+        return check
     elif voice_in.lower() in exit_list:
         eng.say("Bye, have a great day!")
         eng.runAndWait()
