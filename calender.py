@@ -8,7 +8,7 @@ def enter():
 # dd/mm/YY
     d1 = today.strftime("%d/%m/%Y")
     print(d1)
-    eng.say(d1)
+    eng.say("The date[ today is, "+d1)
     eng.runAndWait()
 
     if d1 == "01/01/2021":            
