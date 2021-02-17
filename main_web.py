@@ -2,8 +2,12 @@ import pyttsx3
 import record
 import moduleswitcher as ms
 import greetings
+import eel
 eng = pyttsx3.init()
-
+eel.init('Web')
+eel.init('chat-bootstrap')
+eel.init('chat-bootstrap')
+eel.start('chat.html')
 eng.say(greetings.greet()+" My name is X celeron!")
 eng.runAndWait()
 
@@ -13,7 +17,6 @@ while flag==1:
     eng.runAndWait()
     voice_in=record.recorder()
     flag=ms.shifter(voice_in)
-
 
 # while(check==1):
 #     eng.say("How may I help you?")
