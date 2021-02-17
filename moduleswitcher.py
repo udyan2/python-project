@@ -12,6 +12,8 @@ import emotions
 import battery
 import joke
 import maps
+import note
+import calender
 eng = pyttsx3.init()
 
 
@@ -28,9 +30,9 @@ def shifter(voice_in):
     exit_list=["exit","quit","bye","shutdown","go to sleep"]
     maps_list=["find this loction for me","where is this place","give me direction to the place","where is this place","find this place for me","does this place exist","check a location for me","open maps for me","open maps","show me a location"]
     note_list=["can you make notes of these","write some notes for me","make some notes","can you sum it up","can you make summary of this","summarise these points","summarise it"]
+    calender_list=["what is today's date", "what is the date today","tell me the date","the date today","date today","tell date today"]
     reminder_list=["can you remind me of something","remind me","put up a reminder","reminder","remind me this","keep a reminder"]
     notepad_list=["write a note for me","note this down","keep this noted","please note this down","can you note this down","note this down","note"]
-    calender_list=["what is todays date"]
     sudoku_list=["let us play something","can we play sudoku","I am bored can we play something","let us do something fun"]
     msword_list=["open a word file","create a new word file","new word document","open word"]
     msexcel_list=["open a excel file","create a new excel file","new excel document","open excel"]
@@ -88,6 +90,11 @@ def shifter(voice_in):
         # eng.say("Switching to Jokes Module")
         # eng.runAndWait()
         check=note.enter()
+        return check
+    elif voice_in.lower() in calender_list:
+        # eng.say("Switching to Jokes Module")
+        # eng.runAndWait()
+        check=calender.enter()
         return check
     elif voice_in.lower() in exit_list:
         eng.say("Bye, have a great day!")
