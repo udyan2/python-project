@@ -1,45 +1,23 @@
-from datetime import date
-import os
-import speech_recognition as sr
-from gtts import gTTS
-import pyaudio
-import playsound
-import datetime
-import subprocess
-import wikipedia
-import smtplib
-import webbrowser as wb
 import time
+import pyttsx3
+import record
 
-def speak(text):
-    tts = gTTS(text = text, lang="en-UK")
-    filename = "voice1.mp3"
-    tts.save(filename)
-    playsound.playsound(filename)
-    os.remove(filename)
-def gudio():
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        audio = r.listen(source)
-        said = ""
+eng=pyttsx3.init()
 
-        try:
-            said = r.recognize_google(audio)
-            print(said)
-        except Exception as lk:
-            print("Exception: "+str(lk))
-    return said.lower()
-text = gudio()
-
-if 'remind me' in text:
-    speak('starting reminder')
-    import time
-    print("What shall I remind you about?")
-    speak("What shall I remind you about?")
-    king = str(input())
-    print("In how many minutes?")
-    local_time = float(input())
-    local_time = local_time * 60
+def enter():
+    eng.say("What shall I remind you about?")
+    eng.runAndWait()
+    voice_in = record.recorder()
+    print("Please type, in how many minutes should I remind you?")
+    eng.say("Please type, in how many minutes should I remind you?")
+    eng.runAndWait()
+    ilocal_time = float(input())
+    local_time = ilocal_time * 60
+    eng.say("I will remind you in:"+str(ilocal_time)+" minutes.")
+    eng.runAndWait()
     time.sleep(local_time)
-    print(king)
-    speak(king)
+    print("Gentle Reminder: "+voice_in)
+    eng.say("Gentle Reminder! "+voice_in)
+    eng.runAndWait()
+    check=1
+    return check
