@@ -4,11 +4,13 @@ import moduleswitcher as ms
 import greetings
 eng = pyttsx3.init()
 
+print("Xceleron:",greetings.greet()+" My name is Xceleron!")
 eng.say(greetings.greet()+" My name is X celeron!")
 eng.runAndWait()
 
 flag=1
 while flag==1:
+    print("Xceleron: How may I help you?")
     eng.say("How may I help you?")
     eng.runAndWait()
     voice_in=record.recorder()

@@ -34,6 +34,7 @@ def enter():
     
     flag=1
     while(flag==1):
+        print("Xceleron: I am here to talk to you! So, how are you feeling?")
         eng.say("i am here to talk to you! So, how are you feeling")
         eng.runAndWait()
         
