@@ -31,7 +31,7 @@ def enter():
         return
     
     score=[0,0,0,0,0]
-    
+    vw_list=["i","am","is","was","in","up","and","a","he","she","we","see","something","more","than","the","my","by","all","of","you","feeling"]
     flag=1
     while(flag==1):
         print("Xceleron: I am here to talk to you! So, how are you feeling?")
@@ -51,50 +51,52 @@ def enter():
             
         voice_in = record.recorder()
         words_in = voice_in.lower().split()
-        print(words_in)
+        print("Xceleron: ",words_in)
         
+        if voice_in == 'train model':
+                    eng.say("Xceleron: I love training. Please provide me with the excel file.")
+                    eng.runAndWait()
+                    trainmodel()
         for el in words_in:
-            check_angry = rf['Angry'].str.contains(el).any()
-            check_sad = rf['Sad'].str.contains(el).any()
-            check_love = rf['Love'].str.contains(el).any()
-            # check_surprise = rf['Surprise'].str.contains(voice_in.lower()).any()
-            check_joy = rf['Joy'].str.contains(el).any()
-            check_fear = rf['Fear'].str.contains(el).any()
+            if el not in vw_list:
+                check_angry = rf['Angry'].str.contains(el).any()
+                check_sad = rf['Sad'].str.contains(el).any()
+                check_love = rf['Love'].str.contains(el).any()
+                # check_surprise = rf['Surprise'].str.contains(voice_in.lower()).any()
+                check_joy = rf['Joy'].str.contains(el).any()
+                check_fear = rf['Fear'].str.contains(el).any()
             
-            if voice_in == 'train model':
-                eng.say("I love training. Please provide me with the excel file.")
-                eng.runAndWait()
-                trainmodel()
-            elif check_angry:
-                score[0]+=1
-                eng.say("You are angry. You should calm down.")
-                eng.runAndWait()
-            elif check_sad:
-                score[1]+=1
-                eng.say("you are sad. i wish i could make you happy")
-                eng.runAndWait()
-            elif check_love:
-                score[2]+=1
-                eng.say("it's great that you are feeling loved")
-                eng.runAndWait()
-            #elif check_surprise:
-            #    eng.say("you look do surprised.")
-            #    eng.runAndWait()
-            elif check_joy:
-                score[3]+=1
-                eng.say("i'm glad that you're happy.")
-                eng.runAndWait()
-            elif check_fear:
-                score[4]+=1
-                eng.say("Your words reflect fear. Don't worry, you have me by your side.")
-                eng.runAndWait()
-            elif voice_in.lower()=='exit':
-                eng.say("Exiting Emotions Module")
-                eng.runAndWait()
-                check=1
-                return check                
-            else:
-                print("not found")
+                if check_angry:
+                    score[0]+=1
+                    eng.say("You are angry. You should calm down.")
+                    eng.runAndWait()
+                elif check_sad:
+                    score[1]+=1
+                    eng.say("you are sad. i wish i could make you happy")
+                    eng.runAndWait()
+                elif check_love:
+                    score[2]+=1
+                    eng.say("it's great that you are feeling loved")
+                    eng.runAndWait()
+                #elif check_surprise:
+                #    eng.say("you look do surprised.")
+                #    eng.runAndWait()
+                elif check_joy:
+                    score[3]+=1
+                    eng.say("i'm glad that you're happy.")
+                    eng.runAndWait()
+                elif check_fear:
+                    score[4]+=1
+                    eng.say("Your words reflect fear. Don't worry, you have me by your side.")
+                    eng.runAndWait()
+                elif voice_in.lower()=='exit':
+                    eng.say("Exiting Emotions Module")
+                    eng.runAndWait()
+                    check=1
+                    return check                
+                else:
+                    print("not found")
+        print("Xceleron: Would you like me to show your emotions score?")
         eng.say("Would you like me to show your emotions score?")
         eng.runAndWait()
         voice_in=record.recorder()
