@@ -22,11 +22,11 @@ def recorder():
             eng.say("Sorry, I did not get that.")
             eng.runAndWait()
         except sr.WaitTimeoutError:
-            print("Wait timeout error.")
+            print("Xceleron: Wait timeout error.")
             eng.say("Wait timeout error.")
             eng.runAndWait()
         except sr.RequestError:
-            print("Sorry, the service is currently down.")
+            print("Xceleron: Sorry, the service is currently down.")
             eng.say("Sorry, the service is currently down.")
             eng.runAndWait()
         return voice_in

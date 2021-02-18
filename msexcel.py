@@ -14,9 +14,8 @@ import pyautogui
 import pywhatkit
 import pyttsx3
 eng = pyttsx3.init()
-def word_():
-    eng.say("Opening Word....")
+def excel_():
+    eng.say("Opening Excel.....")
     eng.runAndWait()
-    msworld = r"C:/Program Files/Microsoft Office/root/Office16/WINWORD.EXE"
-    os.startfile(msworld)
-word_()
+    msexcel = r"C:/Program Files/Microsoft Office/root/Office16/EXCEL.EXE"
+    os.startfile(msexcel)

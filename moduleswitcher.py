@@ -15,6 +15,8 @@ import maps
 import note
 import calender
 import reminder
+import sudoku
+import msword
 eng = pyttsx3.init()
 
 
@@ -37,7 +39,7 @@ def shifter(voice_in):
     msword_list=["open a word file","create a new word file","new word document","open word"]
     msexcel_list=["open a excel file","create a new excel file","new excel document","open excel"]
     vscode_vscode=["open a vscode file","create a new vscode file","open vscode","open a vs code file","create a new vs code file","open vs code"]
-    news_list=["what are the top news","catch me up with the news","news updates","news updates please","news","tell me about the news","what are the head lines today","whats happening today in the world"]
+    news_list=["what are the top news","catch me up with the news","news updates","news updates please","news","tell me about the news","what are the head lines today","whats happening today in the world","tell me the news","today's news","latest news"]
     system_list=["shutdown the system","shutdown","close my system","we can wrap it up for the day","restart the system","restart","restart my system","logout of the system","logout","logout my system"]
     screenshot_list=["take a screenshot for me","screenshot this","take screenshot","screenshot","let us screenshot that"]
     timer_list=["open timer","open up the timer","open the timer"]
@@ -100,7 +102,22 @@ def shifter(voice_in):
         # eng.say("Switching to Jokes Module")
         # eng.runAndWait()
         check=reminder.enter()
-        return check        
+        return check
+    elif voice_in.lower() in news_list:
+        # eng.say("Switching to Jokes Module")
+        # eng.runAndWait()
+        check=reminder.enter()
+        return check
+    elif voice_in.lower() in sudoku_list:
+        # eng.say("Switching to Jokes Module")
+        # eng.runAndWait()
+        check=sudoku.enter()
+        return check
+    elif voice_in.lower() in msword_list:
+        # eng.say("Switching to Jokes Module")
+        # eng.runAndWait()
+        check=msword.enter()
+        return check
     elif voice_in.lower() in exit_list:
         print("Xceleron: Bye, have a great day!")
         eng.say("Bye, have a great day!")
