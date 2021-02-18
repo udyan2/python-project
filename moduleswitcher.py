@@ -15,7 +15,6 @@ import maps
 import note
 import calender
 import reminder
-import sudoku
 import msword
 import msexcel
 import vscode
@@ -23,7 +22,6 @@ import shutdown
 import restart
 import logout
 import screenshot
-import timer
 eng = pyttsx3.init()
 
 
@@ -51,7 +49,6 @@ def shifter(voice_in):
     restart_list=["restart the system","restart","restart my system"]
     logout_list=["logout of the system","logout","logout my system"]
     screenshot_list=["take a screenshot for me","screenshot this","take screenshot","screenshot","let us screenshot that"]
-    timer_list=["open timer","open up the timer","open the timer"]
     if voice_in.lower() in emotion_list:
         # eng.say("Switching to Emotions Module")
         # eng.runAndWait()
@@ -63,20 +60,18 @@ def shifter(voice_in):
         check=searchengine.searchm()
         return check
     elif voice_in.lower() in webbrowser_list:
-        eng.say("Switching to webbrowser Module")
-        eng.runAndWait()
-        #browser.enter()
+        # eng.say("Switching to webbrowser Module")
+        # eng.runAndWait()
+        check=browser.enter()
+        return check
     elif voice_in.lower() in generalq_list:
         eng.say("Switching to General Questions Module")
         eng.runAndWait()
         #generalq.enter
     elif voice_in.lower() in music_list:
-        eng.say("Switching to Music Module")
-        eng.runAndWait()
+        # eng.say("Switching to Music Module")
+        # eng.runAndWait()
         #generalq.enter
-    elif voice_in.lower() in wikipedia_list:
-        eng.say("Switching to Wikipedia module")
-        eng.runAndWait()
     elif voice_in.lower() in cpu_list:
         # eng.say("Switching to cpu module")
         # eng.runAndWait()
@@ -156,11 +151,6 @@ def shifter(voice_in):
         # eng.say("Switching to logout Module")
         # eng.runAndWait()
         check=screenshot.enter()
-        return check
-    elif voice_in.lower() in timer_list:
-        # eng.say("Switching to logout Module")
-        # eng.runAndWait()
-        check=timer.enter()
         return check
     elif voice_in.lower() in exit_list:
         print("Xceleron: Bye, have a great day!")
