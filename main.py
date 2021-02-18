@@ -20,7 +20,7 @@ while flag==1:
 # while(check==1):
 #     eng.say("How may I help you?")
 #     eng.runAndWait()
-#     voice_in=record.recorder
+#     voice_in=record.recorder()
 #     ms.shifter(voice_in)
 
 #Change voice between male and female

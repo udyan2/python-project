@@ -15,13 +15,6 @@ import maps
 import note
 import calender
 import reminder
-import msword
-import msexcel
-import vscode
-import shutdown
-import restart
-import logout
-import screenshot
 eng = pyttsx3.init()
 
 
@@ -43,12 +36,11 @@ def shifter(voice_in):
     sudoku_list=["let us play something","can we play sudoku","I am bored can we play something","let us do something fun"]
     msword_list=["open a word file","create a new word file","new word document","open word"]
     msexcel_list=["open a excel file","create a new excel file","new excel document","open excel"]
-    vscode_list=["open a vscode file","create a new vscode file","open vscode","open a vs code file","create a new vs code file","open vs code","open visual studio code","visual studio code","vscode"]
-    news_list=["what are the top news","catch me up with the news","news updates","news updates please","news","tell me about the news","what are the head lines today","whats happening today in the world","tell me the news","today's news","latest news"]
-    shutdown_list=["shutdown the system","shutdown","close my system","we can wrap it up for the day"]
-    restart_list=["restart the system","restart","restart my system"]
-    logout_list=["logout of the system","logout","logout my system"]
+    vscode_vscode=["open a vscode file","create a new vscode file","open vscode","open a vs code file","create a new vs code file","open vs code"]
+    news_list=["what are the top news","catch me up with the news","news updates","news updates please","news","tell me about the news","what are the head lines today","whats happening today in the world"]
+    system_list=["shutdown the system","shutdown","close my system","we can wrap it up for the day","restart the system","restart","restart my system","logout of the system","logout","logout my system"]
     screenshot_list=["take a screenshot for me","screenshot this","take screenshot","screenshot","let us screenshot that"]
+    timer_list=["open timer","open up the timer","open the timer"]
     if voice_in.lower() in emotion_list:
         # eng.say("Switching to Emotions Module")
         # eng.runAndWait()
@@ -60,18 +52,20 @@ def shifter(voice_in):
         check=searchengine.searchm()
         return check
     elif voice_in.lower() in webbrowser_list:
-        # eng.say("Switching to webbrowser Module")
-        # eng.runAndWait()
-        check=browser.enter()
-        return check
+        eng.say("Switching to webbrowser Module")
+        eng.runAndWait()
+        #browser.enter()
     elif voice_in.lower() in generalq_list:
         eng.say("Switching to General Questions Module")
         eng.runAndWait()
         #generalq.enter
     elif voice_in.lower() in music_list:
-        # eng.say("Switching to Music Module")
-        # eng.runAndWait()
+        eng.say("Switching to Music Module")
+        eng.runAndWait()
         #generalq.enter
+    elif voice_in.lower() in wikipedia_list:
+        eng.say("Switching to Wikipedia module")
+        eng.runAndWait()
     elif voice_in.lower() in cpu_list:
         # eng.say("Switching to cpu module")
         # eng.runAndWait()
@@ -88,7 +82,7 @@ def shifter(voice_in):
         check=joke.jokes()
         return check
     elif voice_in.lower() in maps_list:
-        # eng.say("Switching to maps Module")
+        # eng.say("Switching to Jokes Module")
         # eng.runAndWait()
         check=maps.enter()
         return check
@@ -106,52 +100,7 @@ def shifter(voice_in):
         # eng.say("Switching to Jokes Module")
         # eng.runAndWait()
         check=reminder.enter()
-        return check
-    elif voice_in.lower() in news_list:
-        # eng.say("Switching to news Module")
-        # eng.runAndWait()
-        check=reminder.enter()
-        return check
-    elif voice_in.lower() in sudoku_list:
-        # eng.say("Switching to sudoku Module")
-        # eng.runAndWait()
-        check=sudoku.enter()
-        return check
-    elif voice_in.lower() in msword_list:
-        # eng.say("Switching to Jokes Module")
-        # eng.runAndWait()
-        check=msword.enter()
-        return check
-    elif voice_in.lower() in msexcel_list:
-        # eng.say("Switching to msexcel Module")
-        # eng.runAndWait()
-        check=msexcel.enter()
-        return check
-    elif voice_in.lower() in vscode_list:
-        # eng.say("Switching to vscode Module")
-        # eng.runAndWait()
-        check=vscode.enter()    
-        return check
-    elif voice_in.lower() in shutdown_list:
-        # eng.say("Switching to shutdown Module")
-        # eng.runAndWait()
-        check=shutdown.enter()
-        return check
-    elif voice_in.lower() in restart_list:
-        # eng.say("Switching to restart Module")
-        # eng.runAndWait()
-        check=restart.enter()
-        return check
-    elif voice_in.lower() in logout_list:
-        # eng.say("Switching to logout Module")
-        # eng.runAndWait()
-        check=logout.enter()
-        return check
-    elif voice_in.lower() in screenshot_list:
-        # eng.say("Switching to logout Module")
-        # eng.runAndWait()
-        check=screenshot.enter()
-        return check
+        return check        
     elif voice_in.lower() in exit_list:
         print("Xceleron: Bye, have a great day!")
         eng.say("Bye, have a great day!")
