@@ -7,15 +7,15 @@ def enter():
     today = date.today()
 # dd/mm/YY
     d1 = today.strftime("%d/%m/%Y")
-    print(d1)
-    eng.say("The date[ today is, "+d1)
+    print("Xceleron: The date today is, "+d1)
+    eng.say("The date today is, "+d1)
     eng.runAndWait()
 
     if d1 == "01/01/2021":            
         print("Happy New Year")
         eng.say("Happy New Year")
         eng.runAndWait()
-
+        
     elif d1 == "13/01/2021":
         print("Happy Lohri")
         eng.say("Happy Lohri")

@@ -2,6 +2,7 @@ import os
 import pyttsx3
 eng = pyttsx3.init()
 def enter():
+    print("Xceleron: Opening Word.")
     eng.say("Opening Word....")
     eng.runAndWait()
     msworld = r"C:/Program Files/Microsoft Office/root/Office16/WINWORD.EXE"

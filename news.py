@@ -11,17 +11,16 @@ def readnews():
         i = 0
         
         print('Xceleron: Here are the top 5 headlines for today:')
-        eng.say('here are the top 5 headlines for today')
+        eng.say('Here are the top 5 headlines for today.')
         eng.runAndWait()
         print('''=============== TOP HEADLINES ============'''+ '\n')
-        while i<5       
-        for item in data['articles']:
-            print(str(i) + '. ' + item['title'] + '\n')
-            print(item['description'] + '\n')
-            eng.say(str(i) + '. ' + item['title'] + '\n')
-            eng.runAndWait()
-            i += 1
+        while i<5:
+            for item in data['articles']:
+                print(str(i) + '. ' + item['title'] + '\n')
+                print(item['description'] + '\n')
+                eng.say(str(i) + '. ' + item['title'] + '\n')
+                eng.runAndWait()
+                i += 1
                          
     except Exception as e:
-        print(str(e))
-readnews()
+        print("Xceleron: "+str(e))

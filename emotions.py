@@ -58,7 +58,8 @@ def enter():
         print("Xceleron: ",words_in)
         
         if voice_in == 'train model':
-                    eng.say("Xceleron: I love training. Please provide me with the excel file.")
+                    print("Xceleron: I love training. Please provide me with the excel file.")
+                    eng.say("I love training. Please provide me with the excel file.")
                     eng.runAndWait()
                     trainmodel()
         for el in words_in:

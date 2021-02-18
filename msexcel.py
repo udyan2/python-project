@@ -2,6 +2,7 @@ import os
 import pyttsx3
 eng = pyttsx3.init()
 def enter():
+    print("Xceleron: Opening Excel.")
     eng.say("Xceleron: Opening Excel.")
     eng.runAndWait()
     msexcel = r"C:/Program Files/Microsoft Office/root/Office16/EXCEL.EXE"
