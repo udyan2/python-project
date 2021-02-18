@@ -17,9 +17,12 @@ import calender
 import reminder
 import sudoku
 import msword
+import msexcel
+import vscode
 import shutdown
 import restart
 import logout
+import screenshot
 eng = pyttsx3.init()
 
 
@@ -147,6 +150,11 @@ def shifter(voice_in):
         # eng.say("Switching to logout Module")
         # eng.runAndWait()
         check=logout.enter()
+        return check
+    elif voice_in.lower() in screenshot_list:
+        # eng.say("Switching to logout Module")
+        # eng.runAndWait()
+        check=screenshot.enter()
         return check
     elif voice_in.lower() in exit_list:
         print("Xceleron: Bye, have a great day!")
