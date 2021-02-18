@@ -23,6 +23,7 @@ import shutdown
 import restart
 import logout
 import screenshot
+import timer
 eng = pyttsx3.init()
 
 
@@ -155,6 +156,11 @@ def shifter(voice_in):
         # eng.say("Switching to logout Module")
         # eng.runAndWait()
         check=screenshot.enter()
+        return check
+    elif voice_in.lower() in timer_list:
+        # eng.say("Switching to logout Module")
+        # eng.runAndWait()
+        check=timer.enter()
         return check
     elif voice_in.lower() in exit_list:
         print("Xceleron: Bye, have a great day!")
