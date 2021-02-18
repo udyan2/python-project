@@ -46,7 +46,11 @@ def enter():
         love = rf['Love'].str.lower().tolist()
         joy = rf['Joy'].str.lower().tolist()
         fear = rf['Fear'].str.lower().tolist()
-        
+        angry = rf['Angry'].str.lower().tolist()
+        sad = rf['Sad'].str.lower().tolist()
+        love = rf['Love'].str.lower().tolist()
+        joy = rf['Joy'].str.lower().tolist()
+        fear = rf['Fear'].str.lower().tolist()
             
             
         voice_in = record.recorder()

@@ -22,8 +22,6 @@ import shutdown
 import restart
 import logout
 import screenshot
-import calculator
-import browser
 eng = pyttsx3.init()
 
 
@@ -51,7 +49,6 @@ def shifter(voice_in):
     restart_list=["restart the system","restart","restart my system"]
     logout_list=["logout of the system","logout","logout my system"]
     screenshot_list=["take a screenshot for me","screenshot this","take screenshot","screenshot","let us screenshot that"]
-    calculator_list=["open calculator","open the calculator","calculate","i want to calculate something","calculate something for me"]
     if voice_in.lower() in emotion_list:
         # eng.say("Switching to Emotions Module")
         # eng.runAndWait()
@@ -72,8 +69,8 @@ def shifter(voice_in):
         eng.runAndWait()
         #generalq.enter
     elif voice_in.lower() in music_list:
-        eng.say("Switching to Music Module")
-        eng.runAndWait()
+        # eng.say("Switching to Music Module")
+        # eng.runAndWait()
         #generalq.enter
     elif voice_in.lower() in cpu_list:
         # eng.say("Switching to cpu module")
@@ -115,6 +112,11 @@ def shifter(voice_in):
         # eng.runAndWait()
         check=reminder.enter()
         return check
+    elif voice_in.lower() in sudoku_list:
+        # eng.say("Switching to sudoku Module")
+        # eng.runAndWait()
+        check=sudoku.enter()
+        return check
     elif voice_in.lower() in msword_list:
         # eng.say("Switching to Jokes Module")
         # eng.runAndWait()
@@ -149,11 +151,6 @@ def shifter(voice_in):
         # eng.say("Switching to logout Module")
         # eng.runAndWait()
         check=screenshot.enter()
-        return check
-    elif voice_in.lower() in calculator_list:
-        # eng.say("Switching to logout Module")
-        # eng.runAndWait()
-        check=calculator.enter()
         return check
     elif voice_in.lower() in exit_list:
         print("Xceleron: Bye, have a great day!")
