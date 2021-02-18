@@ -5,6 +5,7 @@ import os
 eng = pyttsx3.init()
 def enter():
     while True:
+        print("Xceleron: What should I note?")
         eng.say("What should I note?")
         eng.runAndWait()
         voice_in = record.recorder()
@@ -13,6 +14,7 @@ def enter():
             f.write(voice_in)
         subprocess.Popen(["notepad.exe", file_name])
         subprocess.Popen.terminate()
+        print("Xceleron: Would you like me to add something to this note?")
         eng.say("Would you like me to add something to this note?")
         eng.runAndWait()
         voice_in=record.recorder()

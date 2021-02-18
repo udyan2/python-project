@@ -8,15 +8,14 @@ def readnews():
     try:
         jsonObj = urlopen('''http://newsapi.org/v2/top-headlines?country=in&apiKey=482e97f9a721485bbc540c3cd38510e3''')
         data = json.load(jsonObj)
-        i = 1
-                
+        i = 0
+        
+        print('Xceleron: Here are the top 5 headlines for today:')
         eng.say('here are the top 5 headlines for today')
         eng.runAndWait()
         print('''=============== TOP HEADLINES ============'''+ '\n')
-                
+        while i<5       
         for item in data['articles']:
-            
-                    
             print(str(i) + '. ' + item['title'] + '\n')
             print(item['description'] + '\n')
             eng.say(str(i) + '. ' + item['title'] + '\n')
@@ -25,3 +24,4 @@ def readnews():
                          
     except Exception as e:
         print(str(e))
+readnews()
