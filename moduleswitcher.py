@@ -32,7 +32,7 @@ def shifter(voice_in):
     emotion_list=["talk","talk to me","let's talk","let us talk","talk with me","we should talk"]
     search_list=['search something for me','search something',"let's do a search",'perform a search','search for me','do a search','search','i want to perform a search']
     webbrowser_list=['open a website', 'open google chrome for me', 'open chrome','open the browser', 'Visit a website', 'go to a website for me']
-    generalq_list=['what is your name','how much do you earn','what is your favourite hobby', 'do you like listening to music','what is your favorite song']
+    #generalq_list=['what is your name','how much do you earn','what is your favourite hobby', 'do you like listening to music','what is your favorite song']
     music_list=['play music','music','i want to listen to music','play some music','music time','play songs','songs time','song time','i want to listen to songs', 'i want some music in life', 'play me something','play music']
     battery_list=['Show the cpu battery','show system battery', 'show battery','tell system battery','tell cpu battery','show cpu battery']
     cpu_list=['show cpu usage','cpu usage','cpu percent','show cpu percent','tell cpu utilization','tell cpu usage']
@@ -66,10 +66,10 @@ def shifter(voice_in):
         # eng.runAndWait()
         check=browser.enter()
         return check
-    elif voice_in.lower() in generalq_list:
-        eng.say("Switching to General Questions Module")
-        eng.runAndWait()
-        #generalq.enter
+    # elif voice_in.lower() in generalq_list:
+    #     eng.say("Switching to General Questions Module")
+    #     eng.runAndWait()
+    #     #generalq.enter
     elif voice_in.lower() in music_list:
         # eng.say("Switching to Music Module")
         # eng.runAndWait()
