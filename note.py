@@ -11,9 +11,8 @@ def enter():
         voice_in = record.recorder()
         file_name = "C:/Users/"+os.getlogin()+"/Documents/xnote.txt"
         with open(file_name,"a") as f:
-            f.write(voice_in)
+            f.write("\n"+voice_in)
         subprocess.Popen(["notepad.exe", file_name])
-        subprocess.Popen.terminate()
         print("Xceleron: Would you like me to add something to this note?")
         eng.say("Would you like me to add something to this note?")
         eng.runAndWait()
